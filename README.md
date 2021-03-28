@@ -16,6 +16,7 @@
 ### Association
 - has_many :items
 - has_many :comments
+- has_many :orders
 
 
 ## itemsテーブル
@@ -30,7 +31,7 @@
 | prefecture_id    | integer    | null: false                    |
 | days_to_ship_id  | integer    | null: false                    |
 | price            | integer    | null: false                    |
-| user_id          | references | null: false, foreign_key: true |
+| user             | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -43,8 +44,8 @@
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
 | text    | text       | null: false                    |
-| user_id | references | null: false, foreign_key: true |
-| item_id | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -55,8 +56,8 @@
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
-| item_id         | references | null: false, foreign_key: true |
-| user_id         | references | null: false, foreign_key: true |
+| item            | references | null: false, foreign_key: true |
+| user            | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :item
@@ -74,7 +75,7 @@
 | house_number    | string     | null: false                    |
 | building_number | string     |                                |
 | phone_number    | string     | null: false                    |
-| order_id        | references | null: false, foreign_key: true |
+| order           | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :order
