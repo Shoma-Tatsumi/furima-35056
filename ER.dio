@@ -1,0 +1,66 @@
+<mxfile>
+    <diagram id="I3kkBZrr7cNWbbMcXQkD" name="ページ1">
+        <mxGraphModel dx="1007" dy="633" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#DAD2D8" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="26" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;startSize=20;endArrow=ERmany;endFill=0;endSize=20;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=#DAD2D8;" edge="1" parent="1" source="2" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;startSize=20;endArrow=ERmany;endFill=0;endSize=20;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=#DAD2D8;" edge="1" parent="1" source="2" target="31">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="users" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;rounded=1;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="140" width="230" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="nickname(string,NOT NULL)&#10;email(string,NOT NULL)&#10;password(string,NOT NULL)&#10;first_name(string,NOT NULL)&#10;last_name(string,NOT NULL)&#10;first_name_reading(string,NOT NULL)&#10;last_name_reading(string,NOT NULL)&#10;year(integer,NOT NULL)&#10;month(integer, NOT NULL)&#10;day(integer, NOT NULL)&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;fontColor=#143642;rounded=1;" vertex="1" parent="2">
+                    <mxGeometry y="30" width="230" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="items" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;rounded=1;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="420" width="230" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="image(ActiveStorage実装)&#10;title(text,NOT NULL)&#10;description(text,NOT NULL)&#10;category(integer,NOT NULL)&#10;condition(integer,NOT NULL)&#10;category(integer,NOT NULL)&#10;condition(integer,NOT NULL)&#10;delivery_fee(integer,NOT NULL)&#10;shipping_area(integer,NOT NULL)&#10;days_to_ship(integer,NOT NULL)&#10;price(integer,NOt NULL)&#10;user(references)&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;fontColor=#143642;rounded=1;" vertex="1" parent="5">
+                    <mxGeometry y="30" width="230" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="orders" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;rounded=1;" vertex="1" parent="1">
+                    <mxGeometry x="780" y="420" width="210" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="postal_code(string,NOT NULL)&#10;prefecture(integer,NOT NULL)&#10;city(string,NOT NULL)&#10;house_number(string,NOT NULL)&#10;building_number(string)&#10;phone_number(integer,NOT NULL)&#10;item(references)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;fontColor=#143642;rounded=1;" vertex="1" parent="12">
+                    <mxGeometry y="30" width="210" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;endSize=20;startSize=20;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=#DAD2D8;" edge="1" parent="1" source="6" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="comments" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;rounded=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="320" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="text(text,NOT NULL)&#10;user(references)&#10;item(references)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;fontColor=#143642;rounded=1;" vertex="1" parent="31">
+                    <mxGeometry y="30" width="160" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;startSize=20;endArrow=ERmany;endFill=0;endSize=20;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=#DAD2D8;" edge="1" parent="1" source="6" target="32">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="belongs_to: user&lt;br&gt;has_many: comments&lt;br&gt;has_one: order" treeRoot="1" id="39">
+                    <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;rounded=1;" vertex="1" parent="1">
+                        <mxGeometry x="585" y="380" width="150" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="&lt;span&gt;belongs_to: item&lt;/span&gt;" treeRoot="1" id="40">
+                    <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;rounded=1;" vertex="1" parent="1">
+                        <mxGeometry x="930" y="370" width="150" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="has_many: items&lt;br&gt;has_many: comments" treeRoot="1" id="41">
+                    <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;rounded=1;" vertex="1" parent="1">
+                        <mxGeometry x="585" y="90" width="150" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="belongs_to: user&lt;br&gt;belongs_to: item" treeRoot="1" id="42">
+                    <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;rounded=1;" vertex="1" parent="1">
+                        <mxGeometry x="260" y="270" width="130" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
