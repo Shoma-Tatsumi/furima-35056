@@ -14,12 +14,17 @@ class Item < ApplicationRecord
     validates :title
     validates :description
     validates :price
-    with_options numericality: {other_than: 0, message: "can't be blank"} do
-      validates :category_id
-      validates :condition_id
-      validates :delivery_fee_id
-      validates :prefecture_id
-      validates :days_to_ship_id
-    end
   end
+
+  validates :price, format: {with: /\A[0-9]+\z/, message: "Half-width number"}
+  validates :price, format: {with: /[3-9][0-9]{2}|[1-9][0-9]{3,6}/, message: "Out of setting range"} 
+
+  with_options numericality: {other_than: 0, message: "Select"} do
+    validates :category_id
+    validates :condition_id
+    validates :delivery_fee_id
+    validates :prefecture_id
+    validates :days_to_ship_id
+  end
+  
 end
