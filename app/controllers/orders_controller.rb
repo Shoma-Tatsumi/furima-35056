@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only: :index
   before_action :set_item, only: [:index, :create]
   before_action :set_redirect, only: [:index, :create]
-  before_action :set_item_sold, only: [:index, :create]
   before_action :set_redirect_sold, only: [:index, :create]
 
   def index
@@ -34,12 +33,8 @@ class OrdersController < ApplicationController
     redirect_to root_path if current_user.id == @item.user_id
   end
 
-  def set_item_sold
-    @order = Order.find_by(item_id: @item.id)
-  end
-
   def set_redirect_sold
-    redirect_to root_path unless @order.blank?
+    redirect_to root_path if @item.order.present?
   end
 
   def pay_item
