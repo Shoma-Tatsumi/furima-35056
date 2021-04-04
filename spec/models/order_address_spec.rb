@@ -13,6 +13,10 @@ RSpec.describe OrderAddress, type: :model do
       it 'すべての値が正しく入力されていれば保存できること' do
         expect(@order_address).to be_valid
       end
+      it 'building_numberは空でも保存できること' do
+        @order_address.building_number = ''
+        expect(@order_address).to be_valid
+      end
     end
 
     context '内容に問題がある場合' do
@@ -46,17 +50,13 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("House number can't be blank")
       end
-      it 'building_numberは空でも保存できること' do
-        @order_address.building_number = ''
-        expect(@order_address).to be_valid
-      end
       it 'phone_numberが空だと保存できないこと' do
         @order_address.phone_number = ''
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Phone number can't be blank")
       end
       it 'phone_numberが全角数字だと保存できないこと' do
-        @order_address.phone_number = '１２３４５６７８９'
+        @order_address.phone_number = '０１２３４５６７８９'
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Phone number Input only number")
       end
