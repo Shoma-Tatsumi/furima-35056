@@ -2,9 +2,12 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :set_redirect, only: [:edit, :update, :destroy]
+  before_action :set_item_sold, only: [:show, :edit, :update]
+  before_action :set_redirect_sold, only: [:edit, :update] 
 
   def index
     @items = Item.all.order('created_at DESC')
+    @orders = Order.all
   end
 
   def new
@@ -52,4 +55,14 @@ class ItemsController < ApplicationController
   def set_redirect
     redirect_to root_path if current_user.id != @item.user_id
   end
+
+  def set_item_sold
+    @order = Order.find_by(item_id: @item.id)
+  end
+
+  def set_redirect_sold
+    redirect_to root_path unless @order.blank?
+  end 
+
+
 end
