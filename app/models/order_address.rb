@@ -8,7 +8,7 @@ class OrderAddress
     validates :prefecture_id, numericality: {other_than: 0, message: "Select"}
     validates :city
     validates :house_number
-    validates :phone_number, numericality: { only_integer: true, message: "Input only number"}
+    validates :phone_number, numericality: { only_integer: true, length: {minimum: 10, maxmum: 11}, message: "Input only number"}
     validates :item_id
     validates :user_id
   end
